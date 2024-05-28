@@ -1,9 +1,10 @@
-const { create } = require("domain")
+const { create } = require("domain");
+const { KEYS } = require("jest-watcher");
 const sequelize = require("sequelize")
 const user = sequelize.define('users',{
     id:{
         type: DataTypes.INTEGER,
-        primery key: true,
+        primeryKey: true,
         autoincrement: false,
     },
     username:{
