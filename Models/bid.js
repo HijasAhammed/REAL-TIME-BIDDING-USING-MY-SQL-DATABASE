@@ -34,7 +34,8 @@ const bid= sequelize.define('bid',{
         type: DataTypes.DATE,
         defaultValue:DataTypes.NOW,
     },
-}{
+},
+{
     timestamps:false,
     tableName:'bids',
 })
