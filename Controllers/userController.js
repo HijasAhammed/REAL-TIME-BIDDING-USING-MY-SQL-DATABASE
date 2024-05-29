@@ -1,4 +1,4 @@
-const user=require('../Models/user')
+const User=require('../Models/user')
 
 exports.getprofile= async (req,res)=>{
     try{
