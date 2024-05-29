@@ -1,37 +1,40 @@
-const { create } = require("domain");
-const { KEYS } = require("jest-watcher");
-const sequelize = require("sequelize")
-const user = sequelize.define('users',{
-    id:{
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('database', 'username', 'password', {
+    host: 'localhost',
+    dialect: 'mysql',
+});
+
+const User = sequelize.define('User', {
+    id: {
         type: DataTypes.INTEGER,
-        primeryKey: true,
-        autoincrement: false,
+        primaryKey: true, 
+        autoIncrement: true, 
     },
-    username:{
+    username: {
         type: DataTypes.STRING,
-        unique:true,
-        allowNull:false,
+        unique: true,
+        allowNull: false,
     },
-    password:{
+    password: {
         type: DataTypes.STRING,
-        allowNull:false,
+        allowNull: false,
     },
-    email:{
+    email: {
         type: DataTypes.STRING,
-        unique:true,
-        allowNull:true,
+        unique: true,
+        allowNull: true,
     },
-    role:{
+    role: {
         type: DataTypes.STRING,
-        defaultvalue:'user',
+        defaultValue: 'user',
     },
-    create_at:{
+    created_at: {
         type: DataTypes.DATE,
-        defaultvalue:DataTypes.NOW,
+        defaultValue: DataTypes.NOW, 
     },
-},
-    {
+}, {
     timestamps: false,
     tableName: 'users',
 });
-module.exports= user;
+
+module.exports = User;
