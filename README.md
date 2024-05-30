@@ -22,10 +22,10 @@
 <h4> • Socket.IO for real-time communication</h4>
 <h4> • Multer for handling file uploads</h4>
 <h4> • JSONWebToken for user authentication</h4>
-- A .env file with the following environment variables:
+• A .env file with the following environment variables:
 
-`  PORT=3000, 
-DATABASE_URL=mysql://root:test123@localhost:3306/real_time_bidding, 
+`  PORT=3000
+DATABASE_URL=mysql://root:test123@localhost:3306/real_time_bidding
 JWT_SECRET=your_jwt_secret
 `
     
