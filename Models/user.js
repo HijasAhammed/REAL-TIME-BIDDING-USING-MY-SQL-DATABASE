@@ -3,7 +3,6 @@ const sequelize = new Sequelize('database', 'username', 'password', {
     host: 'localhost',
     dialect: 'mysql',
 });
-
 const User = sequelize.define('User', {
     id: {
         type: DataTypes.INTEGER,

@@ -2,8 +2,6 @@
     const User=require("../Models/user")
     const Item=require("../Models/items")
     const { DataTypes } = require("sequelize")
-
-
     const bid= sequelize.define('bid',{
         id:{
             type: DataTypes.INTEGER,

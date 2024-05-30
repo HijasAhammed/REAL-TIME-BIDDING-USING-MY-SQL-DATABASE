@@ -1,5 +1,4 @@
 const Item = require('../Models/items'); 
-
 exports.getAllItems = async (req, res) => {
   try {
     const items = await Item.findAll();
@@ -9,7 +8,6 @@ exports.getAllItems = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-
 exports.getItemById = async (req, res) => {
   try {
     const item = await Item.findByPk(req.params.id);
@@ -22,7 +20,6 @@ exports.getItemById = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-
 exports.createItem = async (req, res) => {
   try {
     const { name, description, starting_price, end_time } = req.body;
@@ -41,7 +38,6 @@ exports.createItem = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-
 exports.updateItem = async (req, res) => {
   try {
     const item = await Item.findByPk(req.params.id);
@@ -51,8 +47,6 @@ exports.updateItem = async (req, res) => {
     if (item.user_id !== req.user.id && req.user.role !== 'admin') {
       return res.status(403).json({ error: 'Access forbidden' });
     }
-    
-
     const updateData = {};
     const { name, description, starting_price, end_time, image_url } = req.body;
     if (name !== undefined) updateData.name = name;
@@ -68,7 +62,6 @@ exports.updateItem = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-
 exports.deleteItem = async (req, res) => {
   try {
     const item = await Item.findByPk(req.params.id);

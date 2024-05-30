@@ -1,5 +1,4 @@
 const User=require('../Models/user')
-
 exports.getprofile= async (req,res)=>{
     try{
         const user = await User.findByPk(req.user.id, {
